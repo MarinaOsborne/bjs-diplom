@@ -60,6 +60,42 @@
         "EUR": 600,
         "NTC": 90000
       }
+    },
+    {
+      "created_at": "2020-09-10T10:47:09.941Z",
+      "login": "ааа",
+      "password": "ааа",
+      "id": 6,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
+    },
+    {
+      "created_at": "2020-09-10T10:47:17.063Z",
+      "login": "555",
+      "password": "555",
+      "id": 7,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
+    },
+    {
+      "created_at": "2020-09-10T10:51:17.976Z",
+      "login": "ttt",
+      "password": "ttt",
+      "id": 8,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
     }
   ],
   "favorites": {
