@@ -37,7 +37,7 @@ moneyManager.addMoneyCallback = data => ApiConnector.addMoney(data, response => 
         moneyManager.setMessage(response.success, "Операция прошла успешно")
 
         } else {
-            moneyManager.setMessage(response.success, "Введите корректные данные")
+            moneyManager.setMessage(response.success, response.error)
         }
    });
 
@@ -50,7 +50,7 @@ moneyManager.conversionMoneyCallback = data => ApiConnector.convertMoney(data, r
         moneyManager.setMessage(response.success, "Операция прошла успешно")
         
         } else {
-            moneyManager.setMessage(response.success, "Введите корректные данные")
+            moneyManager.setMessage(response.success, response.error)
         }
    });
 
@@ -61,7 +61,8 @@ moneyManager.sendMoneyCallback = data => ApiConnector.transferMoney(data, respon
         moneyManager.setMessage(response.success, "Операция прошла успешно")
         
         } else {
-            moneyManager.setMessage(response.success, "Введите корректные данные")
+            moneyManager.setMessage(response.success, response.error)
+            console.log(response)
         }
    });
 
@@ -79,11 +80,13 @@ moneyManager.sendMoneyCallback = data => ApiConnector.transferMoney(data, respon
         if (response.success === true) {
     
             favoritesWidget.clearTable();
-            favoritesWidget.fillTable(data);
-            moneyManager.updateUsersList(data);
+            favoritesWidget.fillTable(response.data);
+            moneyManager.updateUsersList(response.data);
             favoritesWidget.setMessage(response.success, "Операция прошла успешно")
+            
             } else {
-                moneyManager.setMessage(response.success, "Введите корректные данные")
+                moneyManager.setMessage(response.success, response.error)
+                
             }
         });
     
@@ -92,10 +95,10 @@ moneyManager.sendMoneyCallback = data => ApiConnector.transferMoney(data, respon
         if (response.success === true) {
     
             favoritesWidget.clearTable();
-            favoritesWidget.fillTable(data);
-            moneyManager.updateUsersList(data);
+            favoritesWidget.fillTable(response.data);
+            moneyManager.updateUsersList(response.data);
             favoritesWidget.setMessage(response.success, "Операция прошла успешно")
             } else {
-                moneyManager.setMessage(response.success, "Введите корректные данные")
+                moneyManager.setMessage(response.success, response.error)
             }
         });        
